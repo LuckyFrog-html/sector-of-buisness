@@ -1,0 +1,68 @@
+@import "../../scss/constants";
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr;
+
+    &:not(.columns) {
+        transition: 0.3s;
+
+        &:hover {
+            background: rgba($grey, 0.15);
+        }
+    }
+
+    &.columns {
+        div {
+            border: none;
+            padding: 20px 15px;
+            background: $grey;
+            color: white;
+            display: flex;
+            justify-content: center;
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                background: rgba($grey, 0.9);
+            }
+        }
+
+        img {
+            margin-left: 20px;
+            width: 18px;
+            transition: 0.3s;
+            transform: rotate(180deg);
+
+            @media screen and (max-width: 600px) {
+                margin-left: 5px;
+            }
+
+            &.active {
+                transform: rotate(0);
+            }
+        }
+    }
+
+    div {
+        padding: 10px 15px;
+        border: 1px solid rgba($light, 0.4);
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: 600px) {
+            font-size: 14px;
+            padding: 5px 7px;
+        }
+
+        @media screen and (max-width: 340px) {
+            font-size: 12px;
+        }
+
+        &.id {
+            min-width: 66px;
+            padding: 10px 0;
+            justify-content: center;
+        }
+    }
+}
